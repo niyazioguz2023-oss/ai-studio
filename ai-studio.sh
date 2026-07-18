@@ -59,6 +59,9 @@ case "$MODULE" in
   # === ÖĞRENME / FEEDBACK ===
   learn)
     bash "$ROOT/learn.sh" "$@" ;;
+  # === OTOMON DÖNGÜ (cron periyodik) ===
+  loop|autonomy)
+    bash "$ROOT/autonomy_loop.sh" "$@" ;;
   # === GELİŞMİŞ MODÜLLER ===
   music|muzik)
     /c/pinokio/bin/miniconda/python.exe "$ROOT/musicgen_tts.py" "$@" ;;
