@@ -53,6 +53,12 @@ case "$MODULE" in
   # === OTONOM STÜDYO (fikir -> tam urun) ===
   auto|autopilot)
     bash "$ROOT/autopilot.sh" "$@" ;;
+  # === ÇOK BAŞLIKLI OTOMON AJAN ===
+  agent)
+    bash "$ROOT/agent.sh" "$@" ;;
+  # === ÖĞRENME / FEEDBACK ===
+  learn)
+    bash "$ROOT/learn.sh" "$@" ;;
   # === KENDİNİ GÜNCELLE (HF + GitHub) ===
   update|self-update)
     bash "$ROOT/self_update.sh" "$@" ;;
