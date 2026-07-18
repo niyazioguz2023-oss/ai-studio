@@ -39,12 +39,13 @@ case "$MODULE" in
       tts)  bash "$ROOT/tts.sh" "$@" ;;
       *) echo "audio: tts <metin> [cikis.wav] [konusmaci.wav]" ;;
     esac ;;
-  # === VIDEO (SVD yerel) ===
+  # === VIDEO (gorselden video / SVD) ===
   video)
-    SUB="${1:-dl}"; shift || true
+    SUB="${1:-make}"; shift || true
     case "$SUB" in
-      dl)   bash "$ROOT/download_video.sh" ;;
-      *) echo "video: dl (SVD modelini indirir)" ;;
+      make) bash "$ROOT/video.sh" "$@" ;;
+      dl)   bash "$ROOT/download_video.sh" ;;  # SVD gated -> auth gerekir
+      *) echo "video: make <gorsel_klasoru> [cikis.mp4] [fps] [sahne_sn] | dl (SVD, gated)" ;;
     esac ;;
   # === SOSYAL MEDYA PAKETLEME ===
   social)
