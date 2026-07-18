@@ -47,6 +47,9 @@ case "$MODULE" in
       dl)   bash "$ROOT/download_video.sh" ;;  # SVD gated -> auth gerekir
       *) echo "video: make <gorsel_klasoru> [cikis.mp4] [fps] [sahne_sn] | dl (SVD, gated)" ;;
     esac ;;
+  # === OTOMATIK PIPELINE (tam zincir) ===
+  pipeline)
+    bash "$ROOT/pipeline.sh" "$@" ;;
   # === SOSYAL MEDYA PAKETLEME ===
   social)
     bash "$ROOT/social.sh" "$@" ;;
