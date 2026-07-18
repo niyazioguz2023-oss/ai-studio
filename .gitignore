@@ -1,0 +1,10 @@
+.env
+*.env
+.env2
+.env3
+.env4
+.env_openai
+models/
+renders/
+*.png
+*.mp3
