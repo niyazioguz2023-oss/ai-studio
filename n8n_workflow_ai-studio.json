@@ -1,0 +1,57 @@
+{
+  "name": "AI Studio Otonom Orkestrator",
+  "nodes": [
+    {
+      "parameters": { "rule": { "interval": [ { "field": "hours", "hoursInterval": 6 } ] } },
+      "id": "schedule",
+      "name": "Schedule (6s da bir)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2, "position": [ 250, 300 ]
+    },
+    {
+      "parameters": { "command": "cd /home/node/ai-studio && bash autonomy_loop.sh \"viral cizgi film fikri\"" },
+      "id": "loop",
+      "name": "Otonom Döngü",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1, "position": [ 500, 300 ],
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "command": "cd /home/node/ai-studio && bash ai-studio.sh auto \"{{$json.topic}}\"",
+        "onFail": "continueRegularOutput"
+      },
+      "id": "video",
+      "name": "Video Üret (auto)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1, "position": [ 500, 500 ]
+    },
+    {
+      "parameters": { "command": "cd /home/node/ai-studio && bash ai-studio.sh research \"{{$json.topic}}\"" },
+      "id": "research",
+      "name": "Trend Ara (research)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1, "position": [ 500, 650 ]
+    },
+    {
+      "parameters": { "command": "cd /home/node/ai-studio && bash ai-studio.sh music \"upbeat cartoon theme\"" },
+      "id": "music",
+      "name": "Müzik Üret (music)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1, "position": [ 500, 800 ]
+    },
+    {
+      "parameters": { "command": "cd /home/node/ai-studio && bash ai-studio.sh multi \"{{$json.topic}}\"" },
+      "id": "multi",
+      "name": "Çok Adımlı Ajan (multi)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1, "position": [ 800, 500 ]
+    }
+  ],
+  "connections": {
+    "Schedule (6s da bir)": { "main": [ [ { "node": "Otonom Döngü", "type": "main", "index": 0 } ] ] }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "ai-studio-v1"
+}
