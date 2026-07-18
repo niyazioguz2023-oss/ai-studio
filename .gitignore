@@ -1,10 +1,19 @@
+# Gizli anahtarlar
 .env
 *.env
 .env2
 .env3
 .env4
 .env_openai
+# Indirilen modeller (büyük)
 models/
+# ComfyUI (ayri repo, buraya dahil etme)
+comfyui/
+# Gecici ciktilar
 renders/
+autopilot_*/
+.memory/
 *.png
+*.wav
 *.mp3
+*.mp4
