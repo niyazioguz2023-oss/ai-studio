@@ -53,6 +53,9 @@ case "$MODULE" in
   # === OTONOM STÜDYO (fikir -> tam urun) ===
   auto|autopilot)
     bash "$ROOT/autopilot.sh" "$@" ;;
+  # === KENDİNİ GÜNCELLE (HF + GitHub) ===
+  update|self-update)
+    bash "$ROOT/self_update.sh" "$@" ;;
   # === SOSYAL MEDYA PAKETLEME ===
   social)
     bash "$ROOT/social.sh" "$@" ;;
