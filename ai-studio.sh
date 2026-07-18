@@ -50,6 +50,9 @@ case "$MODULE" in
   # === OTOMATIK PIPELINE (tam zincir) ===
   pipeline)
     bash "$ROOT/pipeline.sh" "$@" ;;
+  # === OTONOM STÜDYO (fikir -> tam urun) ===
+  auto|autopilot)
+    bash "$ROOT/autopilot.sh" "$@" ;;
   # === SOSYAL MEDYA PAKETLEME ===
   social)
     bash "$ROOT/social.sh" "$@" ;;
