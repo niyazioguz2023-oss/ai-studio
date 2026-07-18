@@ -59,6 +59,19 @@ case "$MODULE" in
   # === ÖĞRENME / FEEDBACK ===
   learn)
     bash "$ROOT/learn.sh" "$@" ;;
+  # === GELİŞMİŞ MODÜLLER ===
+  music|muzik)
+    /c/pinokio/bin/miniconda/python.exe "$ROOT/musicgen_tts.py" "$@" ;;
+  research|trend)
+    bash "$ROOT/research.sh" "$@" ;;
+  multi|multi-agent)
+    bash "$ROOT/multi_agent.sh" "$@" ;;
+  social-manage)
+    bash "$ROOT/social_manage.sh" "$@" ;;
+  data|analytics)
+    bash "$ROOT/data_analytics.sh" "$@" ;;
+  text-hub)
+    bash "$ROOT/text_hub.sh" "$@" ;;
   # === KENDİNİ GÜNCELLE (HF + GitHub) ===
   update|self-update)
     bash "$ROOT/self_update.sh" "$@" ;;
