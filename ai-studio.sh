@@ -34,10 +34,18 @@ case "$MODULE" in
     esac ;;
   # === SES (TTS - XTTS yerel) ===
   audio)
-    echo "[audio] XTTS TTS modulu (Pinokio conda + HuggingFace XTTS-v2) hazirlaniyor" ;;
-  # === VIDEO (AnimateDiff yerel) ===
+    SUB="${1:-tts}"; shift || true
+    case "$SUB" in
+      tts)  bash "$ROOT/tts.sh" "$@" ;;
+      *) echo "audio: tts <metin> [cikis.wav] [konusmaci.wav]" ;;
+    esac ;;
+  # === VIDEO (SVD yerel) ===
   video)
-    echo "[video] AnimateDiff/SVD video modulu hazirlaniyor" ;;
+    SUB="${1:-dl}"; shift || true
+    case "$SUB" in
+      dl)   bash "$ROOT/download_video.sh" ;;
+      *) echo "video: dl (SVD modelini indirir)" ;;
+    esac ;;
   # === SOSYAL MEDYA PAKETLEME ===
   social)
     bash "$ROOT/social.sh" "$@" ;;
